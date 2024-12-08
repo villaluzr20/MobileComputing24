@@ -21,10 +21,6 @@ This app utilizes various technologies to enhance functionality, ensure data sec
   - A structured database stores user data, such as workout dates and daily calorie consumption.
   - Enables the generation of weekly reports based on user activity and caloric intake.
 
-- **Cloud Services**:
-  - **Google Cloud Services** or an equivalent platform will be used for app deployment. 
-  - Cloud services allow secure data storage and make the app accessible on mobile devices, providing users with flexibility to use the app on-the-go.
-
 ## 3) Team Members
 
 Our group consists of the following members (maximum of 4 members allowed in the group):
