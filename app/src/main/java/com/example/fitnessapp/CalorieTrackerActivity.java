@@ -22,10 +22,10 @@ public class CalorieTrackerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calorie_tracker);
 
-        // Initialize database helper
+        
         databaseHelper = new FitnessDatabaseHelper(this);
 
-        // Initialize UI components
+       
         editCalorieIntake = findViewById(R.id.editCalorieIntake);
         btnSaveCalories = findViewById(R.id.btnSaveCalories);
 
