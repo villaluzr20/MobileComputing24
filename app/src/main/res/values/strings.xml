@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fitness App</string>
+    <string name="total_workouts">Total Workouts: %1$d</string>
+    <string name="total_calories">Total Calories: %1$d</string>
+    <string name="avg_workout_duration">Average Duration: %1$d min</string>
+    <string name="avg_calories">Average Calories: %1$d</string>
+    <string name="goal_progress">Progress: %1$d%%</string>
+    <string name="save_workout">Save Workout</string>
+    <string name="log_calories">Log Calories</string>
+    <string name="view_progress">View Progress</string>
+    <string name="workout_duration_hint">Enter duration in minutes</string>
+    <string name="calorie_intake_hint">Enter calories</string>
+    <string name="today_summary">Today\'s Summary</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="workout_types">
+        <item>Cardio</item>
+        <item>Weight Training</item>
+        <item>HIIT</item>
+        <item>Yoga</item>
+        <item>Running</item>
+        <item>Swimming</item>
+        <item>Cycling</item>
+        <item>Boxing</item>
+        <item>Pilates</item>
+        <item>CrossFit</item>
+    </string-array>
+</resources>

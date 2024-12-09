@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F0F4F8">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fitness Tracker"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/txtCurrentDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#7F8C8D"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btnWorkoutLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log Workout"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawableLeft="@drawable/ic_workout"
+                android:drawablePadding="8dp"/>
+
+            <Button
+                android:id="@+id/btnCalorieTracker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Track Calories"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:drawableLeft="@drawable/ic_food"
+                android:drawablePadding="8dp"/>
+
+            <Button
+                android:id="@+id/btnProgressReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Progress"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded_button"
+                android:padding="16dp"
+                android:drawableLeft="@drawable/ic_progress"
+                android:drawablePadding="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Today's Summary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#34495E"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/txtTodayWorkouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Workouts: Not logged yet"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtTodayCalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calories: Not logged yet"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
