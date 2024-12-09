@@ -23,15 +23,12 @@ public class WorkoutLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_log);
 
-        // Initialize database helper
         databaseHelper = new FitnessDatabaseHelper(this);
 
-        // Initialize UI components
         editWorkoutDuration = findViewById(R.id.editWorkoutDuration);
         spinnerWorkoutType = findViewById(R.id.spinnerWorkoutType);
         btnSaveWorkout = findViewById(R.id.btnSaveWorkout);
 
-        // Set up the spinner with workout types
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.workout_types,
                 android.R.layout.simple_spinner_item);
