@@ -12,22 +12,22 @@ public class FitnessDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "FitnessAppDatabase";
     private static final int DATABASE_VERSION = 1;
 
-    // Tables
+  
     public static final String TABLE_WORKOUTS = "workouts";
     public static final String TABLE_CALORIES = "calories";
 
-    // Common columns
+    
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_DATE = "date";
 
-    // Workout table columns
+    
     public static final String COLUMN_WORKOUT_TYPE = "type";
     public static final String COLUMN_WORKOUT_DURATION = "duration";
 
-    // Calories table columns
+  
     public static final String COLUMN_CALORIES_CONSUMED = "calories_consumed";
 
-    // Create table statements
+    
     private static final String CREATE_WORKOUT_TABLE = "CREATE TABLE " + TABLE_WORKOUTS + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_DATE + " TEXT, "
@@ -122,7 +122,7 @@ public class FitnessDatabaseHelper extends SQLiteOpenHelper {
         return entries;
     }
 
-    // Helper method to insert a workout
+    
     public long insertWorkout(String date, String type, int duration) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -132,7 +132,6 @@ public class FitnessDatabaseHelper extends SQLiteOpenHelper {
         return db.insert(TABLE_WORKOUTS, null, values);
     }
 
-    // Helper method to insert calorie entry
     public long insertCalorieEntry(String date, int calories) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
