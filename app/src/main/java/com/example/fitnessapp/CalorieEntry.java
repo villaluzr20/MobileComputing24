@@ -11,7 +11,7 @@ public class CalorieEntry {
         this.caloriesConsumed = caloriesConsumed;
     }
 
-    // Getters
+    
     public int getId() {
         return id;
     }
@@ -24,7 +24,6 @@ public class CalorieEntry {
         return caloriesConsumed;
     }
 
-    // Setters
     public void setId(int id) {
         this.id = id;
     }
