@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize database helper
+        
         databaseHelper = new FitnessDatabaseHelper(this);
 
-        // Initialize UI components
+    
         btnWorkoutLog = findViewById(R.id.btnWorkoutLog);
         btnCalorieTracker = findViewById(R.id.btnCalorieTracker);
         btnProgressReport = findViewById(R.id.btnProgressReport);
@@ -37,14 +37,12 @@ public class MainActivity extends AppCompatActivity {
         txtTodayWorkouts = findViewById(R.id.txtTodayWorkouts);
         txtTodayCalories = findViewById(R.id.txtTodayCalories);
 
-        // Set current date
+       
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, MMMM d, yyyy", Locale.getDefault());
         txtCurrentDate.setText(dateFormat.format(new Date()));
 
-        // Set click listeners
         setupClickListeners();
 
-        // Start Exercise Reminder Service
         startService(new Intent(this, ExerciseReminderService.class));
     }
 
@@ -103,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        // Query calories
         String calorieQuery = "SELECT SUM(" + FitnessDatabaseHelper.COLUMN_CALORIES_CONSUMED +
                 ") as total FROM " + FitnessDatabaseHelper.TABLE_CALORIES +
                 " WHERE " + FitnessDatabaseHelper.COLUMN_DATE + " = ?";
