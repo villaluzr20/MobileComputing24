@@ -5,28 +5,50 @@
 Our fitness app is designed to help users log their gym routines, track calorie intake, and set reminders for their exercises. By offering a range of features and interactive guidance, the app aims to support users in achieving their fitness goals efficiently and effectively.
 
 ### Key Features:
-- **Gym Routine Logging**: Users can log and save their daily workout routines to monitor progress and maintain consistency in their fitness journey.
-- **Calorie Tracking**: Users have the ability to record daily calorie intake, enabling them to reach caloric goals and maintain a balanced diet.
-- **Exercise Reminders**: The app sends reminders to ensure users remember to complete specific exercises each day.
-  - If the user hasn’t performed a particular exercise, the app will:
-    - Display detailed instructions on how to perform the exercise.
-    - Offer insights into the physical benefits of each exercise.
-- **Weekly Progress Reports**: To keep users motivated and aware of their improvements, the app generates a weekly summary report showcasing progress toward fitness objectives.
+
+#### Gym Routine Logging  
+- Users can log and save their daily workout routines.  
+- Tracks exercises, sets, and repetitions to monitor progress and maintain consistency.  
+
+#### Calorie Tracking  
+- Provides an interface for users to record daily calorie intake.  
+- Helps users reach caloric goals and maintain a balanced diet.  
+
+#### Exercise Reminders  
+- Sends reminders for scheduled exercises to ensure users stay on track.  
+- Includes detailed instructions for exercises:  
+  - Step-by-step guidance to perform exercises correctly.  
+  - Descriptions of the physical benefits of each exercise.  
+
+#### Weekly Progress Reports  
+- Generates a summary of user activity each week.  
+- Highlights metrics such as workout consistency and calorie tracking progress to keep users informed and motivated.  
 
 ## 2) Technologies Used in Developing This App
 
-This app utilizes various technologies to enhance functionality, ensure data security, and provide scalability:
+To build a robust and user-friendly fitness app, we have used the following technologies:
 
-- **Database**:
-  - A structured database stores user data, such as workout dates and daily calorie consumption.
-  - Enables the generation of weekly reports based on user activity and caloric intake.
+### Development Platforms:  
+- **Frontend**:  
+  - Developed using a mobile-friendly framework to ensure a smooth user experience and responsive design.
 
-## 3) Team Members
+- **Backend**:  
+  - Powered by a server-side framework that enables efficient handling of user requests and data.  
 
-Our group consists of the following members (maximum of 4 members allowed in the group):
+### Database:  
+- A structured database is used to store user data securely, including:  
+  - Workout logs.  
+  - Caloric intake.  
+  - Weekly progress metrics.  
 
-- **Cody Criner**
-- **Ryan Villaluz**
-- **James Miller**
+## 3) Team Members  
+
+Our team comprises the following members, who collaboratively contributed to the app's development:  
+
+- **Cody Criner**  
+- **Ryan Villaluz**  
+- **James Miller**  
+
+This documentation outlines the current state of our fitness app, including its features, functionalities, and the technologies employed.
 
 This documentation provides a clear outline of our app’s purpose, features, and the technical stack involved in its development.
