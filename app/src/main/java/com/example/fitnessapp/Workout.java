@@ -13,7 +13,6 @@ public class Workout {
         this.duration = duration;
     }
 
-    // Getters
     public int getId() {
         return id;
     }
@@ -30,7 +29,6 @@ public class Workout {
         return duration;
     }
 
-    // Setters
     public void setId(int id) {
         this.id = id;
     }
