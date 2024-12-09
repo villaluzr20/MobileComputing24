@@ -1,5 +1,4 @@
 package com.example.fitnessapp;
-
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -60,6 +59,11 @@ public class ExerciseReminderService extends Service {
     }
 
     private void scheduleReminder() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !canScheduleExactAlarms()) {
+            
+            return;
+        }
+
         Intent intent = new Intent(this, ExerciseReminderService.class);
         intent.setAction("SHOW_REMINDER");
 
@@ -77,14 +81,14 @@ public class ExerciseReminderService extends Service {
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         if (alarmManager != null) {
-            // Set reminder time to 8:00 AM
+            
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(System.currentTimeMillis());
             calendar.set(Calendar.HOUR_OF_DAY, 8);
             calendar.set(Calendar.MINUTE, 0);
             calendar.set(Calendar.SECOND, 0);
 
-            // If it's already past 8:00 AM, schedule for next day
+           
             if (calendar.getTimeInMillis() <= System.currentTimeMillis()) {
                 calendar.add(Calendar.DAY_OF_YEAR, 1);
             }
@@ -105,8 +109,16 @@ public class ExerciseReminderService extends Service {
         }
     }
 
+    private boolean canScheduleExactAlarms() {
+        // Check if the device is running Android 12 (API level 31) or higher
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            return alarmManager != null && alarmManager.canScheduleExactAlarms();
+        }
+        return true; 
+    }
+
     private void showReminderNotification() {
-        
         Intent openAppIntent = new Intent(this, MainActivity.class);
         openAppIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
@@ -122,7 +134,6 @@ public class ExerciseReminderService extends Service {
                 flags
         );
 
-       
         Intent logWorkoutIntent = new Intent(this, WorkoutLogActivity.class);
         logWorkoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -133,7 +144,6 @@ public class ExerciseReminderService extends Service {
                 flags
         );
 
-       
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_workout)
                 .setContentTitle("Time to Exercise!")
@@ -143,14 +153,12 @@ public class ExerciseReminderService extends Service {
                 .setContentIntent(pendingIntent)
                 .addAction(R.drawable.ic_workout, "Log Workout", logWorkoutPendingIntent);
 
-        
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if (notificationManager != null) {
             notificationManager.notify(NOTIFICATION_ID, builder.build());
         }
 
-      
         scheduleReminder();
     }
 
@@ -167,7 +175,6 @@ public class ExerciseReminderService extends Service {
         Intent serviceIntent = new Intent(context, ExerciseReminderService.class);
         context.stopService(serviceIntent);
 
-        
         Intent intent = new Intent(context, ExerciseReminderService.class);
         intent.setAction("SHOW_REMINDER");
 
