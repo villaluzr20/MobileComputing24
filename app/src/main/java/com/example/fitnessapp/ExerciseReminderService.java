@@ -106,7 +106,7 @@ public class ExerciseReminderService extends Service {
     }
 
     private void showReminderNotification() {
-        // Create intent for opening the app when notification is clicked
+        
         Intent openAppIntent = new Intent(this, MainActivity.class);
         openAppIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
@@ -122,7 +122,7 @@ public class ExerciseReminderService extends Service {
                 flags
         );
 
-        // Create intent for logging workout directly
+       
         Intent logWorkoutIntent = new Intent(this, WorkoutLogActivity.class);
         logWorkoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -133,7 +133,7 @@ public class ExerciseReminderService extends Service {
                 flags
         );
 
-        // Build the notification
+       
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_workout)
                 .setContentTitle("Time to Exercise!")
@@ -143,14 +143,14 @@ public class ExerciseReminderService extends Service {
                 .setContentIntent(pendingIntent)
                 .addAction(R.drawable.ic_workout, "Log Workout", logWorkoutPendingIntent);
 
-        // Show the notification
+        
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         if (notificationManager != null) {
             notificationManager.notify(NOTIFICATION_ID, builder.build());
         }
 
-        // Reschedule for next day
+      
         scheduleReminder();
     }
 
@@ -167,7 +167,7 @@ public class ExerciseReminderService extends Service {
         Intent serviceIntent = new Intent(context, ExerciseReminderService.class);
         context.stopService(serviceIntent);
 
-        // Cancel any pending alarms
+        
         Intent intent = new Intent(context, ExerciseReminderService.class);
         intent.setAction("SHOW_REMINDER");
 
