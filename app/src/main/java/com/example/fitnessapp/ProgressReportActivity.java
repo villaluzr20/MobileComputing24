@@ -49,7 +49,6 @@ public class ProgressReportActivity extends AppCompatActivity {
         calendar.add(Calendar.DAY_OF_YEAR, -7);
         String startDate = dateFormat.format(calendar.getTime());
 
-        // Get workouts
         List<Workout> workouts = databaseHelper.getWorkouts(startDate, endDate);
         int totalWorkouts = workouts.size();
         int totalDuration = 0;
@@ -58,7 +57,6 @@ public class ProgressReportActivity extends AppCompatActivity {
         }
         int avgWorkoutDuration = totalWorkouts > 0 ? totalDuration / totalWorkouts : 0;
 
-        // Get calories
         List<CalorieEntry> calorieEntries = databaseHelper.getCalorieEntries(startDate, endDate);
         int totalCalories = 0;
         for (CalorieEntry entry : calorieEntries) {
@@ -66,10 +64,8 @@ public class ProgressReportActivity extends AppCompatActivity {
         }
         int avgCalories = calorieEntries.size() > 0 ? totalCalories / calorieEntries.size() : 0;
 
-        // Calculate progress
         int progress = calculateProgress(totalWorkouts, avgWorkoutDuration, avgCalories);
 
-        // Update UI
         updateUI(totalWorkouts, totalCalories, avgWorkoutDuration, avgCalories, progress);
     }
 
